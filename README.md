@@ -96,10 +96,10 @@ I did not use any generic helper functions.
 | /user/coin | 7 |  DELETE | delete(:id)| modelDelete(:id)|    DELETE FROM ... |
 | /user/coin/comment | 8 |  GET |getAll(:user, :coin) |   modelGetAll(:user, :coin) |  SELECT * |   
 | /user/coin/comment | 9 |  PUT | updateComment(:id, data) |   modelUpdateComment(:id, data) |  UPDATE SET... |  
-/user/coin/comment | 10 | POST  |  addComment(data) |  modelAddComment(data) |  UPDATE SET...  | 
-/user/coin/comment | 11 | DELETE | deleteComment(:id) |  modelDeleteComment(:id) | DELETE FROM... | 
-/user/coin/comment | 12 | GET |  makeComment() |  modelMakeComment() |     
-/user/coin/comment | 13 | GET | getOneComment(:id) | modelgetOneComment(:id) |     
+| /user/coin/comment | 10 | POST  |  addComment(data) |  modelAddComment(data) |  UPDATE SET...  | 
+| /user/coin/comment | 11 | DELETE | deleteComment(:id) |  modelDeleteComment(:id) | DELETE FROM... | 
+| /user/coin/comment | 12 | GET |  makeComment() |  modelMakeComment() |     
+| /user/coin/comment | 13 | GET | getOneComment(:id) | modelgetOneComment(:id) |     
 
 ## Additional Libraries
  Use this section to list all supporting libraries and their role in the project. 
