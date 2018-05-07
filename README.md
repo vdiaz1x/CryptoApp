@@ -86,8 +86,8 @@ I did not use any generic helper functions.
 
 ## Router Chart Table
 
-| Routes |  Method | Controller/Action |  Model |  SQL | Results | |
-|---|---|---|---|---|---|
+| Routes |  Method | Controller/Action |  Model |  SQL | Results | 
+|---| :---: | :---: | :---: | :---: | :---: |
 | /user |  1 |  GET | getOneUser(:id) | modelGetOneUser(:id) |   SELECT userID  | |
 | /user |  2 |  POST |   updateUser(data) |   modelUpdateUser(data) |  UPDATE SET.. | |
 | /user |  3 |  GET  |   addUser()  | modelAddUser() | INSERT INTO...  | |
