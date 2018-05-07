@@ -86,20 +86,20 @@ I did not use any generic helper functions.
 
 ## Router Chart Table
 
-| Routes |  Method | Controller/Action |  Model |  SQL | Results
-| /user |  1 |  GET | getOneUser(:id) | modelGetOneUser(:id) |   SELECT userID  |
-| /user |  2 |  POST |   updateUser(data) |   modelUpdateUser(data) |  UPDATE SET.. |
-| /user |  3 |  GET  |   addUser()  | modelAddUser() | INSERT INTO...  |
-| /user/coin | 4 |  GET |getOneCoin(:id)| modelGetOneCoin(:id) |   SELECT coinID |   
-| /user/coin | 5 |  PUT |updateCoin(:id, data) |  modelUpdateCoin(:id, data)|  UPDATE SET.. | 
-| /user/coin | 6 |  POST |   addOne(data)  |  modelAddOne(data) |  INSER INTO...  |
-| /user/coin | 7 |  DELETE | delete(:id)| modelDelete(:id)|    DELETE FROM ... |
-| /user/coin/comment | 8 |  GET |getAll(:user, :coin) |   modelGetAll(:user, :coin) |  SELECT * |   
-| /user/coin/comment | 9 |  PUT | updateComment(:id, data) |   modelUpdateComment(:id, data) |  UPDATE SET... |  
-| /user/coin/comment | 10 | POST  |  addComment(data) |  modelAddComment(data) |  UPDATE SET...  | 
-| /user/coin/comment | 11 | DELETE | deleteComment(:id) |  modelDeleteComment(:id) | DELETE FROM... | 
-| /user/coin/comment | 12 | GET |  makeComment() |  modelMakeComment() |     
-| /user/coin/comment | 13 | GET | getOneComment(:id) | modelgetOneComment(:id) |     
+| Routes |  Method | Controller/Action |  Model |  SQL | Results | |
+| /user |  1 |  GET | getOneUser(:id) | modelGetOneUser(:id) |   SELECT userID  | |
+| /user |  2 |  POST |   updateUser(data) |   modelUpdateUser(data) |  UPDATE SET.. | |
+| /user |  3 |  GET  |   addUser()  | modelAddUser() | INSERT INTO...  | |
+| /user/coin | 4 |  GET |getOneCoin(:id)| modelGetOneCoin(:id) |   SELECT coinID | |
+| /user/coin | 5 |  PUT |updateCoin(:id, data) |  modelUpdateCoin(:id, data)|  UPDATE SET.. | |
+| /user/coin | 6 |  POST |   addOne(data)  |  modelAddOne(data) |  INSER INTO...  | |
+| /user/coin | 7 |  DELETE | delete(:id)| modelDelete(:id)|    DELETE FROM ... | |
+| /user/coin/comment | 8 |  GET |getAll(:user, :coin) |   modelGetAll(:user, :coin) |  SELECT * | |   
+| /user/coin/comment | 9 |  PUT | updateComment(:id, data) |   modelUpdateComment(:id, data) |  UPDATE SET... |  |
+| /user/coin/comment | 10 | POST  |  addComment(data) |  modelAddComment(data) |  UPDATE SET...  |  |
+| /user/coin/comment | 11 | DELETE | deleteComment(:id) |  modelDeleteComment(:id) | DELETE FROM... |  |
+| /user/coin/comment | 12 | GET |  makeComment() |  modelMakeComment() |    | 
+| /user/coin/comment | 13 | GET | getOneComment(:id) | modelgetOneComment(:id) |   |  
 
 ## Additional Libraries
  Use this section to list all supporting libraries and their role in the project. 
