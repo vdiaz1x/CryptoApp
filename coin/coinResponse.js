@@ -1,0 +1,1 @@
+// this is the file for the responses (views) for the coin routes
