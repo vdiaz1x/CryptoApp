@@ -59,7 +59,6 @@ https://drive.google.com/open?id=1OJoEcKOwwf-bsRc3-vlUKAGkyzHWGbx6
 
 ### Portfolio
 
-### Game Reset
 
 
 ## Functional Components
