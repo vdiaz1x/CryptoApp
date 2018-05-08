@@ -1,1 +1,20 @@
-// this is the file for the responses (views) for the coin routes
+module.exports = {
+  sendJson(req, res) {
+    res.json(res.locals.tasks || res.locals.task);
+  },
+  handCreate(req, res) {
+    res.set({
+      location: `${req.originalUrl}/${res.locals.coin.coin_id}`,
+    });
+    res.status(201).end();
+  },
+
+  deleteHandle(req, res) {
+    res.status(204).end();
+  },
+
+  send404(err, req, res, next) {
+    console.log(error);
+    res.status(404).send('This page may have depricated please try again at another time.');
+  },
+};
