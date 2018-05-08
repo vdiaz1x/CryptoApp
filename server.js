@@ -4,15 +4,21 @@
 // grabbing values from .env file
 require('dotenv').config();
 
+console.log(process.env.CRYPTO_NEWS_API_KEY);
+
 // basic imports for server
-const express = require('express');
-const logger = require('morgan');
-const parser = require('body-parser');
-const path = require('path');
+const express     = require('express');
+const logger      = require('morgan');
+const parser      = require('body-parser');
+const path        = require('path');
 
 // configuring database for router
-const dbConx = require('./config/connect');
-// const taskRouter = require('./task')(dbConx);
+const db = require('./config/connect');
+
+// configuring the routers, inserting the db config
+// const users       = require('./user')(db);
+// const coins       = require('./coin')(db);
+// const comments    = require('./comment')(db);
 
 // grabbing express function
 const app = express();
@@ -26,7 +32,7 @@ app.use(logger('dev'));
 // setting up body parser for grabbing information
 app.use(parser.json());
 
-// set up path for dist foldeaer (for static React files)
+// set up path for dist folder (for static React files)
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // app.use('/api/users/:userID/tasks', (req, res, next) => {
