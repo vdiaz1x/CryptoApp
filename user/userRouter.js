@@ -11,7 +11,7 @@ module.exports = (userRouter, userController, responseHandler) => {
 
   userRouter.route('/:id')
     .get(userController.getOneUser, responseHandler.sendJson)
-    .post(userController.updateUser, responseHandler.sendJson)
+    .post(userController.updateUser, responseHandler.sendJson);
 
   userRouter.route('/')
     .get(userController.addUser, responseHandler.addJson);
