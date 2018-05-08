@@ -1,9 +1,9 @@
 // this is the pg promise setup
 
-//initializing pgp
+// initializing pgp
 const pgp = require('pg-promise')({
-  // not sure what this line does, will have to research/remove if necessary
-  query: q => console.log(q.query),
+  // console logs the query for testing purposes
+  query: q => console.log('query', q.query),
 });
 
 const config = require('./config');
