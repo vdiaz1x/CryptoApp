@@ -12,8 +12,8 @@
     "debug": "nodemon --inspect-brk server.js",
     "test": "NODE_ENV=test PORT=3333 mocha --recursive --reporter spec",
     "build": "webpack -p --mode production",
-    "build-dev": "concurrently \"webpack -d --progress --watch --mode development\" \"nodemon server.js\"",
-    "build-watch": "concurrently \"webpack -d --mode development\" \"nodemon server.js\"",
+    "build-dev": "webpack -d --mode development",
+    "build-watch": "concurrently \"webpack -d --watch --mode development\" \"nodemon server.js\"",
     "clean": "rm -rf dist && rm -rf node_modules",
     "heroku-prebuild": "scripts/deployment_react.sh",
     "heroku-postbuild": "scripts/deployment_cleanup.sh"
@@ -67,7 +67,7 @@
     "webpack-cli": "^2.1.2"
   },
   "webpackConfig": {
-    "main": "client/src/main.jsx",
+    "main": "src/index.js",
     "outputDir": "dist",
     "html": {
       "title": "cryptoapp",
