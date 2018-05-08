@@ -34,13 +34,19 @@ Include a full list of features that have been prioritized based on the `Time an
 
 Include the full list of features that will be part of your MVP 
 
+-Data Visualization of the users cryptocurrency portfolio
+-Using an external API (CoinMarketCap and CryptoCurrency NewsAPI) to render information 
+around the user's portfolio 
+-Having User Authentication (User-Only no strangers allowed because of sensitive data)
+-CRUD around people commenting about their investments on their portfolio (Creating comments around their coin, 
+editing/updating those comments, deleting the comments they disregard around their coin, and reading their comments)
+
 
 
 ## POST MVP
 
-Include the full list of features that you are considering for POST MVP
 
-POST MVP features are laid out to essentially make the game as realistic as possible:
+POST MVP features would be to build out the second part of the app which would be image hosting forum for Cryptocurrency Miners. Search functionality for other users to look at other people's comments. 
 
 
 ## Wireframes
@@ -64,25 +70,15 @@ https://drive.google.com/open?id=1OJoEcKOwwf-bsRc3-vlUKAGkyzHWGbx6
 ## Functional Components
 
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. 
-
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Win Logic | H | 2hrs| 1hrs | 1hrs |
-| FlexBox Display | H | 2hrs| 3hrs | 3hrs |
-| Animations | M | 3hrs| 4hrs | 4hrs |
-| CSS page layout | H | 3hrs| 3hrs | 3hrs |
-| creating classes | H | 3hrs| 2hrs | 2hrs |
-| forms | M | 1hrs| 1hrs | 1hrs |
+| Data Visualization | H | 5hrs| hrs | hrs |
+| MV(React instead of Views)C | H | 10hrs| 3hrs | 3hrs |
+| External API Fetch/Ajax Calls| M | 7hrs| 4hrs | 4hrs |
+| CSS page layout | H | 8 hrs| 3hrs | 3hrs |
+| Rendering Data/Passing State/Props | H | 4 hrs| 2hrs | 2hrs |
+| Configuring React/Express | H | 3hrs| 1hrs | 1hrs |
 
-## Helper Functions
-Helper functions should be generic enough that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
-
-| Function | Description | 
-| --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string | 
-I did not use any generic helper functions. 
-|throwBall.click(function() | Most methods/functions I used were click events|
 
 ## Router Chart Table
 
@@ -109,35 +105,31 @@ I did not use any generic helper functions.
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  
-"headOne.html(`${this.$value} selected <span id='selected'>${this.val}</span>`)''
-I liked this code because both utilized 'this' but under different scopes. The Id needed to be put in a span to be used in a separate method to compare for win logic.
 
-## jQuery Discoveries
- Use this section to list some, but not all, of the jQuery methods and\or functionality discovered while working on this project.
- I discovered that you can use jQuery to call upon an animation created in CSS
- I also discovered that you can create an animation in jQuery, but its not easy.
+## React/Express/Node Discoveries
+
 
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes. 
  I changed everything from my first script file that was essentially all free floating to code a second script file that utilzed classes because it is better practice.
 
- I changed my reset button to refresh the page which I know was frowned upon but made the game functional to repeat since I could not get the animations to reset.
+ 
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
  
- **ERROR**: Animation created to rotate the ball on the wheel would not run more than once.<br/>
- **RESOLUTION**: No resolution. Used code to refresh the page instead of staying on the same page.
+ **ERROR**: 
+ **RESOLUTION**: 
 
-**ERROR**: The value of the input form submission was not useable to push into a heading in a separate method.<br/>           
-**RESOLUTION**: I needed to bind the method to adjust the scope within the class.
+**ERROR**:           
+**RESOLUTION**: 
 
-**ERROR**: I was unable to track the position of the ball along its rotation around the spinning wheel to use in my win logic to compare it to the degree of the number the user selects.<br/>
-**RESOLUTION**: I had to manually assign each number around the roulette wheel with its own degree.
+**ERROR**: 
+**RESOLUTION**: 
 
-**ERROR**: My images were not moving positions when I tried to add a media query to the file.<br/>
-**RESOLUTION**: I had to add "div." to the beginning of the image in css.
+**ERROR**: 
+**RESOLUTION**:
 
 #### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**:          
+**RESOLUTION**: 
