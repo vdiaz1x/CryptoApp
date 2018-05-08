@@ -14,6 +14,7 @@ module.exports = (coinRouter, coinController, responseHandler) => {
     .delete(coinController.destroyCoin, responseHandler.handDestroy);
 
   coinRouter.route('/')
+    .get(coinController.getOneUser, responseHandler.sendJson)
     .post(coinController.createCoin, responseHandler.handCreate);
 
   coinRouter.use(responseHandler.send404);

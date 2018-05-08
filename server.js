@@ -35,15 +35,14 @@ app.use(parser.json());
 // set up path for dist folder (for static React files)
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// app.use('/api/users/:userID/tasks', (req, res, next) => {
-//   // let's pretend we've logged in
-//   req.session = {
-//     user: {
-//       userID: req.params.userID,
-//     },
-//   };
-//   next();
-// }, taskRouter);
+app.use('/api/user/coins/', (req, res, next) => {
+// let's pretend we've logged in
+  req.user: {
+  userID: 1,
+  };
+  next();
+  }, coins);
+
 
 // app.get('/api/users/:userID', (req, res) => {
 //   res.send('USERS');
