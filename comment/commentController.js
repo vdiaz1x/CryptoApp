@@ -1,4 +1,5 @@
 module.exports = commentModel => ({
+
   async getAllComments(req, res, next) {
     try {
       res.locals.comments = await commentModel.getAllComments(req.session.comments.commentID);
@@ -10,7 +11,8 @@ module.exports = commentModel => ({
 
   async getOneComment(req, res, next) {
     try {
-      res.locals.comments = await commentModel.getOneComment(req.session.comments.commentID, req.params.id);
+      res.locals.comments = await commentModel.getOneComment
+      (req.session.comments.commentID, req.params.id);
       next();
     } catch (e) {
       next(e);
@@ -39,7 +41,7 @@ module.exports = commentModel => ({
   async deleteComment(req, res, next) {
 
     try {
-      res.locals.tasks = await taskDB.destroy(req.session.comments.commentID, req.params.id);
+      res.locals.comments = await commentModel.destroy(req.session.comments.commentID, req.params.id);
       next();
     } catch (e) {
       next(e);
