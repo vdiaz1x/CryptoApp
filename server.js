@@ -11,6 +11,7 @@ const express     = require('express');
 const logger      = require('morgan');
 const parser      = require('body-parser');
 const path        = require('path');
+const authRouter  = require('./user/auth/authRouter');
 
 // configuring database for router
 const db = require('./config/connect');
@@ -35,13 +36,27 @@ app.use(parser.json());
 // set up path for dist folder (for static React files)
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use('/api/user/coins/', (req, res, next) => {
+app.use('/userInfo', (req, res, next) => {
 // let's pretend we've logged in
-  req.user: {
-  userID: 1,
-  };
-  next();
-  }, coins);
+  // req.user = {
+  // userID: 1,
+  // };
+  // next();
+    req.session = {
+      user: {
+        userID: 1
+      },
+    };
+    next();
+  })
+
+app.use('/api/coins/1', (req,res,next) => {
+  res.json('This is the coin route')
+})
+
+app.use('/api/coins/1/comment/1', (req,res,next) => {
+  res.json('This is the comments route')
+})
 
 
 // app.get('/api/users/:userID', (req, res) => {

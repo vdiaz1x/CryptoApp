@@ -9,12 +9,12 @@
 
 module.exports = (commentRouter, commentController, responseHandler) => {
 
-  commentRouter.route('/:id')
+  commentRouter.route('/comment/:id')
     .get(commentController.getOneComment, responseHandler.sendJson)
     .put(commentController.updateComment, responseHaldler.sendJson)
     .delete(commentController.deleteComment, responeHandler.deleteHandle);
 
-  commentRouter.route('/')
+  commentRouter.route('/comment')
     .get(commentController.getAllComments, responseHandler.sendJson)
     .post(commentController.makeComment, responseHandler.createHand);
     // need to figure out what the last route is supposed to do
