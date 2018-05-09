@@ -38,13 +38,11 @@ DROP TABLE IF EXISTS user_coin CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  username VARCHAR(255) UNIQUE NOT NULL,
-  password_digest TEXT NOT NULL,
-  email VARCHAR(255) UNIQUE NOT NULL,
   firstname VARCHAR(64),
   lastname VARCHAR(64),
-  zip VARCHAR(10),
-  avatar TEXT,
+  username VARCHAR(255) UNIQUE NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_hash TEXT NOT NULL,
   date_created TIMESTAMP NOT NULL DEFAULT NOW(),
   trader BOOLEAN
 );
