@@ -1,6 +1,6 @@
 module.exports = {
   sendJson(req, res) {
-    res.json(res.locals.tasks || res.locals.task);
+    res.json(res.locals.comment || res.locals.comments);
   },
 
   createHandler(req, res) {

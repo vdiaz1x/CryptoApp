@@ -7,8 +7,8 @@ module.exports = commentModel => ({
   // controller for getting all comments for that user and coun
   async getAllComments(req, res, next) {
     try {
-      console.log(req.user.userID);
-      console.log(req.user.coinID);
+      console.log('get all', req.user.userID);
+      console.log('get all', req.user.coinID);
 
       // params for model are user id and coin id
       res.locals.comments = await commentModel.getAllComments(req.user.userID, req.user.coinID);
@@ -23,12 +23,12 @@ module.exports = commentModel => ({
   // controller for getting one comment
   async getOneComment(req, res, next) {
     try {
-      console.log(req.params.commentID);
+      console.log('get one', req.params.commentID);
 
       // param for model is the comment id, found in the route param
-      res.locals.comments = await commentModel.getOneComment(req.params.commentID);
+      res.locals.comment = await commentModel.getOneComment(req.params.commentID);
 
-      console.log(res.locals.comments);
+      console.log(res.locals.comment);
       next();
     } catch (e) {
       next(e);
