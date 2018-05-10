@@ -26,10 +26,12 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^2.0.1",
+    "chart.js": "^2.7.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
-    "pg-promise": "^8.4.3"
+    "pg-promise": "^8.4.3",
+    "react-chartjs-2": "^2.7.2"
   },
   "devDependencies": {
     "@fortawesome/fontawesome": "^1.1.5",

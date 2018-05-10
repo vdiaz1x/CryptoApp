@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Bar,Line,Pie} from 'react-chartjs-2';
 
-class Graph extends React.Component {
-  constructor(props) {
+export default class Graph extends Component{
+  constructor(props){
     super(props);
+    this.state = {
+      chartData:props.chartData
+    }
   }
   render() {
       return (
@@ -11,8 +15,13 @@ class Graph extends React.Component {
                 <p className="title">Graph</p>
                 <a className="button">Current</a>
                 <a className="button">Button</a>
+                <Line
+      data={this.state.chartData}
+      options={{
+
+      }}
+      />
                 <figure className="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/640x480.png"/>
                 </figure>
               </article>
 
@@ -21,6 +30,4 @@ class Graph extends React.Component {
     );
   }
 }
-
-export default Graph;
 
