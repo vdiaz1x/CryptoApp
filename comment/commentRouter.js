@@ -16,7 +16,7 @@ module.exports = (commentRouter, commentController, responseHandler) => {
 
   commentRouter.route('/')
     .get(commentController.getAllComments, responseHandler.sendJson)
-    .post(commentController.makeComment, responseHandler.createHand);
+    .post(commentController.makeComment, responseHandler.createHandler);
     // need to figure out what the last route is supposed to do
     // also check if the route for this is correct
   return commentRouter;

@@ -1,5 +1,3 @@
-import { create } from "domain";
-
 // this is the file for the models for the comment routes
 
 // exporting all the models for comments as a function
@@ -22,14 +20,14 @@ module.exports = function commentModel(db) {
       `, commentID)
     },
     // this posts one comment
-    // this takes the info passed from the form/fetch and inserts it into the db
-    // create(commentData) {
-    //   return db.one(`
-    //   INSERT INTO comments (user_id, coin_id, content)
-    //   VALUES ($/user_id/, $/coin_id/, $/content/)
-    //   RETURNING *
-    //   `, commentData)
-    // },
+    // this takes the info passed from the form/fetch and inserts it into the
+    create(commentData) {
+      return db.one(`
+      INSERT INTO comments (user_id, coin_id, content)
+      VALUES ($/user_id/, $/coin_id/, $/content/)
+      RETURNING *
+      `, commentData)
+    },
   };
 };
 

@@ -3,14 +3,14 @@ module.exports = {
     res.json(res.locals.tasks || res.locals.task);
   },
 
-  handCreate(req, res) {
-    res.set({
-      location: `${req.originalUrl}/${res.locals.user.user_id}`,
-    });
+  createHandler(req, res) {
+    // res.set({
+    //   location: `${req.originalUrl}/${res.locals.user.user_id}`,
+    // });
     res.status(201).end();
   },
 
-  deleteHandle(req, res) {
+  deleteHandler(req, res) {
     res.status(204).end();
   },
 
