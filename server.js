@@ -11,13 +11,13 @@ const express     = require('express');
 const logger      = require('morgan');
 const parser      = require('body-parser');
 const path        = require('path');
-const authRouter  = require('./user/auth/authRouter');
+// const authRouter  = require('./user/auth/authRouter');
 
 // configuring database for router
 const db = require('./config/connect');
 
 // configuring the routers, inserting the db config
-// const users       = require('./user')(db);
+const userAuth    = require('./user-auth')(db);
 const coins       = require('./coin')(db);
 const comments    = require('./comment')(db);
 
@@ -36,29 +36,28 @@ app.use(parser.json());
 // set up path for dist folder (for static React files)
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use('/userInfo', (req, res, next) => {
-// let's pretend we've logged in
-  // req.user = {
-  // userID: 1,
-  // };
-  // next();
-  req.session = {
-    user: {
-      userID: 1,
-    },
-  };
-  next();
-});
+// app.use('/userInfo', (req, res, next) => {
+// // let's pretend we've logged in
+//   // req.user = {
+//   // userID: 1,
+//   // };
+//   // next();
+//   req.session = {
+//     user: {
+//       userID: 1,
+//     },
+//   };
+//   next();
+// });
 
-app.use('/api/coins/', (req, res, next) => {
+app.use('/api/user/auth', (req, res, next) => {
   req.user = {
     userID: 1,
-    coinID: 1,
+    // coinID: 1,
   };
 
   next();
-}, coins);
-
+}, userAuth);
 
 // this is the route for the comment router to use for the comment routes
 app.use('/api/coins/comments', (req, res, next) => {
@@ -72,6 +71,14 @@ app.use('/api/coins/comments', (req, res, next) => {
   next();
 }, comments);
 
+app.use('/api/coins/', (req, res, next) => {
+  req.user = {
+    userID: 1,
+    coinID: 1,
+  };
+
+  next();
+}, coins);
 
 // app.get('/api/users/:userID', (req, res) => {
 //   res.send('USERS');
