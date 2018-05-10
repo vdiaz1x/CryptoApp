@@ -14,7 +14,7 @@ module.exports = {
   },
 
   send404(err, req, res, next) {
-    console.log(error);
+    console.log(err);
     res.status(404).send('This page may have depricated please try again at another time.');
   },
 };
