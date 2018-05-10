@@ -19,7 +19,7 @@ const db = require('./config/connect');
 // configuring the routers, inserting the db config
 // const users       = require('./user')(db);
 // const coins       = require('./coin')(db);
-// const comments    = require('./comment')(db);
+const comments    = require('./comment')(db);
 
 // grabbing express function
 const app = express();
@@ -50,13 +50,20 @@ app.use('/userInfo', (req, res, next) => {
     next();
   })
 
-app.use('/api/coins/1', (req,res,next) => {
-  res.json('This is the coin route')
-})
+// app.use('/api/coins/1', (req,res,next) => {
+//   res.json('This is the coin route')
+// })
 
-app.use('/api/coins/1/comment/1', (req,res,next) => {
-  res.json('This is the comments route')
-})
+app.use('/api/coins/comments', (req, res, next) => {
+  // res.json('This is the comments route')
+  req.user={
+    userID: 1,
+    coinID: 1,
+    commentID: 2,
+  }
+
+  next();
+}, comments)
 
 
 // app.get('/api/users/:userID', (req, res) => {

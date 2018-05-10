@@ -2,7 +2,10 @@ module.exports = commentModel => ({
 
   async getAllComments(req, res, next) {
     try {
-      res.locals.comments = await commentModel.getAllComments(req.session.comments.commentID);
+      console.log(req.user.userID);
+      console.log(req.user.coinID);
+
+      res.locals.comments = await commentModel.getAllComments(req.user.userID, req.user.coinID);
       next();
     } catch (e) {
       next(e);
@@ -11,8 +14,10 @@ module.exports = commentModel => ({
 
   async getOneComment(req, res, next) {
     try {
-      res.locals.comments = await commentModel.getOneComment
-      (req.session.comments.commentID, req.params.id);
+      console.log(req.user.commentID);
+      console.log(req.params.id);
+
+      res.locals.comments = await commentModel.getOneComment(req.user.commentID);
       next();
     } catch (e) {
       next(e);
@@ -21,7 +26,9 @@ module.exports = commentModel => ({
 
   async makeComment(req, res, next) {
     try {
-      res.locals.comments = await commentModel.create(req.session.comments.commentID, req.body);
+      console.log(req.body);
+
+      res.locals.comments = await commentModel.create(req.body);
       next();
     } catch (e) {
       next(e);
@@ -31,7 +38,7 @@ module.exports = commentModel => ({
   async updateComment(req, res, next) {
 
     try {
-      res.locals.comments = await commentModel.update(req.session.comments.commentID, req.body);
+      res.locals.comments = await commentModel.update(commentID, req.body);
       next();
     } catch (e) {
       next(e);
