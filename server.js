@@ -50,10 +50,10 @@ app.use('/userInfo', (req, res, next) => {
   next();
 });
 
-app.use('/api/coins/', (req,res,next) => {
+app.use('/api/coins/', (req, res, next) => {
   req.user = {
     userID: 1,
-    coinID: 1
+    coinID: 1,
   };
 
   next();

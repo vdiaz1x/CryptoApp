@@ -1,5 +1,12 @@
 module.exports = function coinModel(db) {
 return {
+
+    getAllCoin() {
+      return db.any(`
+      SELECT * FROM coins
+        `)
+    },
+
     getOneCoin(coinID) {
       return db.one(`
       SELECT * FROM coins
@@ -27,7 +34,7 @@ return {
   //     `, [coinID, coinAmount]);
   //   },
 
-    destroy(coinID) {
+    destroyCoin(coinID) {
       return db.none(`
       DELETE FROM coins
       WHERE id = $1

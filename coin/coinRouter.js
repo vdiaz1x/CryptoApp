@@ -9,10 +9,10 @@ module.exports = (coinRouter, coinController, responseHandler) => {
   coinRouter.route('/:coinID')
     .get(coinController.getOneCoin, responseHandler.sendJson)
     .put(coinController.updateCoin, responseHandler.sendJson)
-    .delete(coinController.destroyCoin, responseHandler.handDestroy);
+    .delete(coinController.destroyCoin, responseHandler.deleteHandle);
 
   coinRouter.route('/')
-    .get(coinController.getOneUser, responseHandler.sendJson)
+    .get(coinController.getAllCoin, responseHandler.sendJson)
     .post(coinController.createCoin, responseHandler.handCreate);
 
   coinRouter.use(responseHandler.send404);
