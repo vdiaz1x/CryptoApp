@@ -12,7 +12,7 @@ module.exports = (commentRouter, commentController, responseHandler) => {
   commentRouter.route('/:commentID')
     .get(commentController.getOneComment, responseHandler.sendJson)
     .put(commentController.updateComment, responseHandler.sendJson)
-    .delete(commentController.deleteComment, responseHandler.deleteHandle);
+    .delete(commentController.deleteComment, responseHandler.deleteHandler);
 
   commentRouter.route('/')
     .get(commentController.getAllComments, responseHandler.sendJson)
