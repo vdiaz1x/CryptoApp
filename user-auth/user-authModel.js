@@ -1,5 +1,5 @@
 // this is the file for the models for the user routes
-//find by id and upsert borrowed from class work
+// find by id and upsert borrowed from class work
 
 module.exports = function users(db) {
   return {
@@ -10,6 +10,15 @@ module.exports = function users(db) {
         FROM users
        WHERE id = $1
     `, id);
+    },
+
+    // find user by username
+    findByUsername(username) {
+      return db.one(`
+      SELECT *
+        FROM users
+       WHERE username = $1
+    `, username);
     },
 
     // upsert = (insert or update)

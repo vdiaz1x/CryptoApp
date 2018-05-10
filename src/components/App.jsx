@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './Home.jsx';
-
+import Stats from './Stats';
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      TaskList:'',
+      data:{},
       chartData:{
         labels: ['Bitcoin', 'Ethereum','EOS','Lifecoin'],
         datasets:[
@@ -47,16 +47,21 @@ componentWillMount(){
     fetch('https://api.coinmarketcap.com/v2/ticker/1')
       .then(res => res.json())
       .then((data) => {
-        this.hello(data)
+        this.hello(data);
+        this.setState({
+          data: data.data
+        });
       })
       .catch(err => console.log(err));
   }
 
   render() {
+    console.log("app data",this.state.data)
+    console.log("app data",this.state.data.name)
     return (
 
       <div className="App container is-ancestor">
-      <Home chartData={this.state.chartData}/>
+      <Home chartData={this.state.chartData} data={this.state.data}/>
       </div>
 
     );
