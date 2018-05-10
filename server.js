@@ -18,7 +18,7 @@ const db = require('./config/connect');
 
 // configuring the routers, inserting the db config
 // const users       = require('./user')(db);
-// const coins       = require('./coin')(db);
+const coins       = require('./coin')(db);
 const comments    = require('./comment')(db);
 
 // grabbing express function
@@ -50,9 +50,15 @@ app.use('/userInfo', (req, res, next) => {
   next();
 });
 
-// app.use('/api/coins/1', (req,res,next) => {
-//   res.json('This is the coin route')
-// })
+app.use('/api/coins/', (req,res,next) => {
+  req.user = {
+    userID: 1,
+    coinID: 1
+  };
+
+  next();
+}, coins);
+
 
 // this is the route for the comment router to use for the comment routes
 app.use('/api/coins/comments', (req, res, next) => {

@@ -1,6 +1,5 @@
 module.exports = function coinModel(db) {
-  return {
-
+return {
     getOneCoin(coinID) {
       return db.one(`
       SELECT * FROM coins

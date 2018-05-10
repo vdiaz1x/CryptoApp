@@ -3,9 +3,9 @@ module.exports = {
     res.json(res.locals.coins || res.locals.coins);
   },
   handCreate(req, res) {
-    res.set({
-      location: `${req.originalUrl}/${res.locals.coins.coin_id}`,
-    });
+    // res.set({
+    //   location: `${req.originalUrl}/${res.locals.coins.coin_id}`,
+    // });
     res.status(201).end();
   },
 

@@ -18,7 +18,7 @@ module.exports = coinModel => ({
   },
 
   async destroyCoin(req, res, next) {
-    try{
+    try {
       res.locals.coins = await coinModel.destroyCoin(req.params.coinID);
       next ();
     }
@@ -28,9 +28,9 @@ module.exports = coinModel => ({
   },
 
   async createCoin(req, res, next) {
-    try{
+    try {
       res.locals.coins = await coinModel.createCoin(req.session.coins.coinID, req.body);
-    next();
+      next();
     } catch (e) {
       next(e);
     }
