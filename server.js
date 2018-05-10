@@ -42,28 +42,29 @@ app.use('/userInfo', (req, res, next) => {
   // userID: 1,
   // };
   // next();
-    req.session = {
-      user: {
-        userID: 1
-      },
-    };
-    next();
-  })
+  req.session = {
+    user: {
+      userID: 1,
+    },
+  };
+  next();
+});
 
 // app.use('/api/coins/1', (req,res,next) => {
 //   res.json('This is the coin route')
 // })
 
+// this is the route for the comment router to use for the comment routes
 app.use('/api/coins/comments', (req, res, next) => {
-  // res.json('This is the comments route')
-  req.user={
-    userID: 1,
-    coinID: 1,
+  // this is dummy data for testing
+  req.user = {
+    userID:    1,
+    coinID:    1,
     commentID: 2,
-  }
+  };
 
   next();
-}, comments)
+}, comments);
 
 
 // app.get('/api/users/:userID', (req, res) => {

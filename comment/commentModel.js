@@ -17,7 +17,7 @@ module.exports = function commentModel(db) {
       return db.one(`
       SELECT * FROM comments
       WHERE id = $1
-      `, commentID)
+      `, commentID);
     },
     // this posts one comment
     // this takes the info passed from the form/fetch and inserts it into the db
@@ -26,24 +26,25 @@ module.exports = function commentModel(db) {
       INSERT INTO comments (user_id, coin_id, content)
       VALUES ($/user_id/, $/coin_id/, $/content/)
       RETURNING *
-      `, commentData)
+      `, commentData);
     },
     // this updates one comment
-    // this takes the comment id and the info passed down from the form/fetch and inserts it into the db
+    // this takes the comment id and the info passed down from the form/fetch
+    // and inserts it into the db
     update(commentID, commentContent) {
       return db.one(`
       UPDATE comments
       SET content = $2
       WHERE id = $1
       RETURNING *
-      `, [commentID, commentContent])
+      `, [commentID, commentContent]);
     },
 
     destroy(commentID) {
       return db.none(`
       DELETE FROM comments
       WHERE id = $1
-      `, commentID)
+      `, commentID);
     },
   };
 };

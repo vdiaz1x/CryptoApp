@@ -4,9 +4,6 @@ module.exports = {
   },
 
   createHandler(req, res) {
-    // res.set({
-    //   location: `${req.originalUrl}/${res.locals.user.user_id}`,
-    // });
     res.status(201).end();
   },
 
@@ -15,7 +12,7 @@ module.exports = {
   },
 
   send404(err, req, res, next) {
-    console.log(error);
+    console.log(err);
     res.status(404).send('Please come back this page is under development');
   },
 };
