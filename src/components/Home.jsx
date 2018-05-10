@@ -6,32 +6,20 @@ import Footer from '../partials/Footer';
 import News from './News';
 import Stats from './Stats';
 
-export default class Home extends Component {
-   constructor(props) {
-    super(props);
-    this.state = {
-     chartData:props.chartData
-    }
-  }
-  render() {
+export default function Home(props) {
+    console.log("this is home data",props.data);
     return (
       <div className="App">
         <Nav />
-      <Stats
-        price="300"
-        volume="50K"
-        change="6%"
-        etc="434"
-         />
-      <div className="tile is-parent">
-      <Graph chartData={this.state.chartData}/>
-      <Wallet />
-      </div>
-      <News />
-      <Footer />
+        <Stats data={props.data}/>
+        <div className="tile is-parent">
+          <Graph chartData={props.chartData}/>
+          <Wallet />
+        </div>
+        <News />
+        <Footer />
       </div>
     );
-  }
 }
 
 
