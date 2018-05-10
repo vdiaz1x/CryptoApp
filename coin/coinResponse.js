@@ -1,10 +1,10 @@
 module.exports = {
   sendJson(req, res) {
-    res.json(res.locals.tasks || res.locals.task);
+    res.json(res.locals.coins || res.locals.coins);
   },
   handCreate(req, res) {
     res.set({
-      location: `${req.originalUrl}/${res.locals.coin.coin_id}`,
+      location: `${req.originalUrl}/${res.locals.coins.coin_id}`,
     });
     res.status(201).end();
   },

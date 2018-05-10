@@ -8,7 +8,7 @@
 
 module.exports = (coinRouter, coinController, responseHandler) => {
 
-  coinRouter.route('/:id')
+  coinRouter.route('/:coinID')
     .get(coinController.getOneCoin, responseHandler.sendJson)
     .put(coinController.updateCoin, responseHandler.sendJson)
     .delete(coinController.destroyCoin, responseHandler.handDestroy);
