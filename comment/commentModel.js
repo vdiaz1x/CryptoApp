@@ -20,13 +20,30 @@ module.exports = function commentModel(db) {
       `, commentID)
     },
     // this posts one comment
-    // this takes the info passed from the form/fetch and inserts it into the
+    // this takes the info passed from the form/fetch and inserts it into the db
     create(commentData) {
       return db.one(`
       INSERT INTO comments (user_id, coin_id, content)
       VALUES ($/user_id/, $/coin_id/, $/content/)
       RETURNING *
       `, commentData)
+    },
+    // this updates one comment
+    // this takes the comment id and the info passed down from the form/fetch and inserts it into the db
+    update(commentID, commentContent) {
+      return db.one(`
+      UPDATE comments
+      SET content = $2
+      WHERE id = $1
+      RETURNING *
+      `, [commentID, commentContent])
+    },
+
+    destroy(commentID) {
+      return db.none(`
+      DELETE FROM comments
+      WHERE id = $1
+      `, commentID)
     },
   };
 };

@@ -4,7 +4,7 @@
 // grabbing values from .env file
 require('dotenv').config();
 
-console.log(process.env.CRYPTO_NEWS_API_KEY);
+// console.log(process.env.CRYPTO_NEWS_API_KEY);
 
 // basic imports for server
 const express     = require('express');

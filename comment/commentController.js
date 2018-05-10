@@ -36,9 +36,11 @@ module.exports = commentModel => ({
   },
 
   async updateComment(req, res, next) {
+    console.log(req.params.coinID)
+    console.log(req.body.content);
 
     try {
-      res.locals.comments = await commentModel.update(commentID, req.body);
+      res.locals.comments = await commentModel.update(req.params.commentID, req.body.content);
       next();
     } catch (e) {
       next(e);
@@ -48,7 +50,7 @@ module.exports = commentModel => ({
   async deleteComment(req, res, next) {
 
     try {
-      res.locals.comments = await commentModel.destroy(req.session.comments.commentID, req.params.id);
+      res.locals.comments = await commentModel.destroy(req.params.commentID);
       next();
     } catch (e) {
       next(e);

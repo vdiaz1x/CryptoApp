@@ -9,10 +9,10 @@
 
 module.exports = (commentRouter, commentController, responseHandler) => {
 
-  commentRouter.route('/:id')
+  commentRouter.route('/:commentID')
     .get(commentController.getOneComment, responseHandler.sendJson)
-  //   .put(commentController.updateComment, responseHandler.sendJson)
-  //   .delete(commentController.deleteComment, responseHandler.deleteHandle);
+    .put(commentController.updateComment, responseHandler.sendJson)
+    .delete(commentController.deleteComment, responseHandler.deleteHandle);
 
   commentRouter.route('/')
     .get(commentController.getAllComments, responseHandler.sendJson)
