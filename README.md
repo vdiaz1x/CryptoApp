@@ -21,9 +21,6 @@ This schedule will be used to keep track of your progress throughout the week an
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
-
-
 Our project is a cryptocurrency portfolio tracker. The user would input their name and password to create a profile along with whether they are a trader or miner. Once the user has signed-up they would login and see their portfolio. We are using an external API in order to display information around the cryptocurrency. 
 
 ## Priority Matrix
@@ -32,16 +29,14 @@ Include a full list of features that have been prioritized based on the `Time an
 
 ## MVP
 
--Data Visualization of the users cryptocurrency portfolio
+- Data Visualization of the users cryptocurrency portfolio
 
--Using an external API (CoinMarketCap and CryptoCurrency NewsAPI) to render information 
+- Using an external API (CoinMarketCap and CryptoCurrency NewsAPI) to render information 
 around the user's portfolio 
 
--Having User Authentication (User-Only no strangers allowed because of sensitive data)
+- Having User Authentication (User-Only no strangers allowed because of sensitive data)
 
--CRUD around people commenting about their investments on their portfolio (Creating comments around their coin, 
-
-editing/updating those comments, deleting the comments they disregard around their coin, and reading their comments)
+- CRUD around people commenting about their investments on their portfolio (Creating comments around their coin, editing/updating those comments, deleting the comments they disregard around their coin, and reading their comments)
 
 
 ## USER STORIES 
@@ -52,15 +47,15 @@ is secure and my personal information is only shown to me.
 -As a user, I have invested in cryptocurrency and I need to be able to 
 keep track of my investments across exchange platforms.
 
--As a user, I also want to have a visualization of all of my coins in 
+- As a user, I also want to have a visualization of all of my coins in 
 one graphical representation so I can easily compare my coin investments. 
 
--Users should also be able to comment on their crypto investments to keep 
+- Users should also be able to comment on their crypto investments to keep 
 track of changes that they have made. 
 - This comment data across users could eventually create a forum
 or community around cryptocurrency investments. 
 
--Viewing coin metrics across coins will allow people to see in real-time how their coins are measuring up against each other. 
+- Viewing coin metrics across coins will allow people to see in real-time how their coins are measuring up against each other. 
 
 - Also, aggregating a news feed based on the users 
 coin list will allow users to see why their investments are changing. 
@@ -69,8 +64,7 @@ coin list will allow users to see why their investments are changing.
 to measure their investments over time, but we will either require another
 API or data source to make this happen. 
 
--Also, we want to provide a space 
-where users are able to learn about businesses where cryptocurrency is being
+- Also, we want to provide a space where users are able to learn about businesses where cryptocurrency is being
 accepted.  
 
 
