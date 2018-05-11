@@ -41,10 +41,10 @@ around the user's portfolio
 
 ## USER STORIES 
 
--As a user I should be able to login and register that way I know my data 
+- As a user I should be able to login and register that way I know my data 
 is secure and my personal information is only shown to me. 
 
--As a user, I have invested in cryptocurrency and I need to be able to 
+- As a user, I have invested in cryptocurrency and I need to be able to 
 keep track of my investments across exchange platforms.
 
 - As a user, I also want to have a visualization of all of my coins in 
