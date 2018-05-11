@@ -8,12 +8,12 @@ This schedule will be used to keep track of your progress throughout the week an
 
 |  Day | Deliverable | 
 |---|---| 
-|Day 1: Mon| Finalize Idea/Protype| Yes
-|Day 2: Tue| API/Database/React | Yes
-|Day 3: Wed|  | Yes
-|Day 4: Thu|  | Yes
-|Day 5: Fri|  | Yes
-|Day 6: Sat| Finish all logic around rendering/ Slides | Yes
+|Day 1: Mon| Finalize Idea/Prototype/Webpack/Skeleton| Yes
+|Day 2: Tue| API Research/Database Schema & Build/React Static | Yes
+|Day 3: Wed| React Static(cont)/ExpressRouter| Yes
+|Day 4: Thu| Auth Research/External API Front-End Render | Yes
+|Day 5: Fri| Auth Implementation/React Dynamic| Yes
+|Day 6: Sat| React Dynamic/News API Integration/AuthCompletions | Yes
 |Day 7: Sun| Finalize Cryptocurrency Tracker| Yes
 |Day 8: Mon| Debugging | Yes
 |Day 9: Tue| Debugging | Yes
